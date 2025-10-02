@@ -7,6 +7,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.dialog.MaterialDialogs
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showExitDialog() {
-        AlertDialog.Builder(this)
+        MaterialAlertDialogBuilder(this)
             .setTitle("Thoát ứng dụng")
             .setMessage("Bạn có chắc chắn muốn thoát không?")
             .setPositiveButton("Có") { _, _ -> finish() }
@@ -45,7 +47,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showErrLog() {
-        AlertDialog.Builder(this)
+        MaterialAlertDialogBuilder(this)
             .setTitle("Lỗi")
             .setMessage("Cái này chưa phát triển 😘")
             .setNegativeButton("OK") { dialog, _ -> dialog.dismiss() }.show()
